@@ -10,8 +10,7 @@ int main() {
 
 
     while (opcja != 0) {
-        printf("4. Usun liczby\n");
-        printf("3. dodaj do srodka.\n");
+        printf("3. Usun liczby\n");
         printf("2. Wypisanie od konca i usuniecie(pierw trzeba wykonac 1).\n");
         printf("1. dodanie liczb i wypisanie od poczatku.\n");
         printf("0. Zakonczyc program.\n");
@@ -41,17 +40,8 @@ int main() {
                     usunzlisty();
                 }
                 break;
-            case 3:
-                printf("Podaj liczbe do srodka: ");
-                scanf("%i", &srodek);
-                dodajdosrodka(srodek);
-                printf("Liczba dodana\n");
-                for (int i = ile; i >= 0; i--) {
-                    usunzlisty();
-                }
-                break;
 
-            case 4:
+            case 3:
                 for (int i = ile; i >= 0; i--) {
                     usunzlisty();
                 }
