@@ -1,56 +1,33 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "listadwukierunkowa.h"
+#include "ListaDwukierunkowa.h"
 
+int Menu();
+int wczytajLiczbe(char* tresc);
 
-int main() {
-    int opcja = -1;
-    int ile;
-    int srodek;
+int main(){
 
-
-    while (opcja != 0) {
-        printf("3. Usun liczby\n");
-        printf("2. Wypisanie od konca i usuniecie(pierw trzeba wykonac 1).\n");
-        printf("1. dodanie liczb i wypisanie od poczatku.\n");
-        printf("0. Zakonczyc program.\n");
-        printf("Podaj liczbe: ");
-
-        scanf("%i", &opcja);
-        printf("\n");
-        switch (opcja) {
-            case 0:
+    int wybor;
+    struct listadwukierunkowa* ogon=NULL;
+    struct listadwukierunkowa* glowa = NULL;
+    glowa=ogon;
+    while(wybor!=5){
+        wybor=Menu();
+        switch(wybor){
+            case 1 :
+                pokazliste(glowa);
+                break;
+            case 2 :
+                glowa = dodajNaPoczatku(glowa, wczytajLiczbe("Podaj liczbe do dodania: \n"));
+                break;
+            case 3 :
+                glowa = dodajNaKoniec(glowa, wczytajLiczbe("Podaj liczbe do dodania: \n"));
+                break;
+            case 4 :
+                glowa = usun(glowa, wczytajLiczbe("Podaj element, ktory chcesz usunac: \n"));
+                break;
+            case 5 :
                 printf("koniec programu");
-                break;
-
-            case 1:
-                printf("Podaj ile chcesz miec liczb: ");
-                scanf("%i", &ile);
-                printf("\n");
-                for (int i = 1; i <= ile; i++) {
-                    dodajnakonieclisty(i);
-                    wypiszodpoczatku();
-
-                }
-                printf("\n");
-                break;
-            case 2:
-                for (int i = ile - 1; i >= 0; i--) {
-                    wypiszodkonca();
-                    usunzlisty();
-                }
-                break;
-
-            case 3:
-                for (int i = ile; i >= 0; i--) {
-                    usunzlisty();
-                }
-                printf("Liczby usuniete\n");
-                break;
-
-
-            default:
-                printf("Podaj wlasciwa opcje.\n");
                 break;
 
         }
