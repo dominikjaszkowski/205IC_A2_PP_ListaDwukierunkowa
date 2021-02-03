@@ -58,14 +58,12 @@ void dodajdosrodka(int wartosc) {
     struct element *nowyelement = (struct element *) malloc(sizeof(struct element));
     int ilosc;
     nowyelement->value = wartosc;
-    struct element *srodkowyelement = glowa;
-    for (int i = 0, end = ilosc / 2 - 1; i < end; i++) {
-        srodkowyelement = srodkowyelement->next;
-
-
-        nowyelement->prev = srodkowyelement->prev;
-        nowyelement->next = srodkowyelement->next;
-        srodkowyelement->next = nowyelement;
+    struct element *srodek = glowa;
+    for (int i = 0, wylicz = ilosc / 2 - 1; i < wylicz; i++) {
+        srodek = srodek->next;
+        nowyelement->prev = srodek->prev;
+        nowyelement->next = srodek->next;
+        srodek->next = nowyelement;
     }
 }
 
