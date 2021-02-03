@@ -54,19 +54,6 @@ void dodajnapoczateklisty(int wartosc) {
 
 }
 
-void dodajdosrodka(int wartosc) {
-    struct element *nowyelement = (struct element *) malloc(sizeof(struct element));
-    int ilosc;
-    nowyelement->value = wartosc;
-    struct element *srodek = glowa;
-    for (int i = 0, wylicz = ilosc / 2 - 1; i < wylicz; i++) {
-        srodek = srodek->next;
-        nowyelement->prev = srodek->prev;
-        nowyelement->next = srodek->next;
-        srodek->next = nowyelement;
-    }
-}
-
 
 void wypiszodpoczatku() {
     struct element *iterator = glowa;
