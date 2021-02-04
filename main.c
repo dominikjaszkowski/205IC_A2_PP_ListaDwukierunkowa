@@ -10,7 +10,7 @@ int main(){
     int wybor;
     struct listadwukierunkowa* ogon=NULL;
     struct listadwukierunkowa* glowa = NULL;
-    glowa=ogon;
+
     while(wybor!=5){
         wybor=Menu();
         switch(wybor){
