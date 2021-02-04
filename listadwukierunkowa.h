@@ -77,6 +77,6 @@ int Menu(){
     printf("5) Zakoncz program\n");
     printf("Moja opcja: ");
     scanf("%d",&opcja);
-
+    printf("\n");
     return opcja;
 }
